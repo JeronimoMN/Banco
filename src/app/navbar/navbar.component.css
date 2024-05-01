@@ -1,0 +1,18 @@
+*{
+    color: white;
+    background-color: #358DA6;
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+@media (max-width:767px){
+    .titulo-navbar{
+        font-size: 10em;
+    }
+    .img-navbar{
+        width: 20%;
+        margin-left: 0%;
+    }
+}
+
