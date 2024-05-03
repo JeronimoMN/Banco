@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Listado de empleados</span>
+            <h5 *ngIf="clientes.length == 0" style="margin-top: 30px;">No hay datos para mostrar</h5>
+            <table *ngIf="clientes.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Celular</th>
+                    <th>Dirección</th>
+                    <th>Clave Dinamica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cliente of clientes">
+                    <th> {{cliente.id_cliente}} </th>
+                    <td> {{cliente.nombres_cliente}} </td>
+                    <td> {{cliente.apellidos_cliente}} </td>
+                    <td> {{cliente.celular_cliente}} </td>
+                    <td> {{cliente.direccion_cliente}} </td>
+                    <td> {{cliente.clave_dinamica}}</td>
+                    <td>
+                      <i class="fa-regular fa-pen-to-square fa-lg text-info mr-4" [routerLink]="['/edit-empleado/', cliente.id]"></i>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
