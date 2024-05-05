@@ -18,7 +18,7 @@
                                     <div class="form-group d-flex justify-content-start mb-3">
                                         <div style="margin: 3px;"><i class="fa-solid fa-envelope" style="font-size: 25px;"></i></div>
 
-                                            <input type="text" formControlName="user" class="form-control"
+                                            <input type="text" formControlName="nombreUsuario" class="form-control"
                                                 placeholder="Nombre de Usuario">
 
                                     </div>
@@ -31,7 +31,7 @@
 
                                     <div class="form-group d-flex justify-content-start mb-3">
                                         <div style="margin: 5px;"><i class="fa-solid fa-lock" style="font-size: 25px;"></i></div>
-                                        <input type="password" formControlName="password" class="form-control"
+                                        <input type="password" formControlName="claveCuenta" class="form-control"
                                                 placeholder="Contraseña">
                                     </div>
                                     <div class="alert alert-danger" [hidden]="password.valid || password.pristine">
@@ -45,7 +45,7 @@
                                     </div>
     
     
-                                    <button class="btn btn-primary" [disabled]="loginForm.invalid">Ingresar</button>
+                                    <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Ingresar</button>
 
                                     
                         
