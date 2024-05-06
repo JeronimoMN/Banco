@@ -1,0 +1,13 @@
+.login_btn{
+    border: none;
+    outline: none;
+    background-color:#358DA6 ;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.login_btn:hover{
+/*color: #358DA6 ;*/
+background-color: #87C9B7 ;
+}

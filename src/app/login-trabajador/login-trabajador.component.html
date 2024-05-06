@@ -1,0 +1,63 @@
+<div class="container-fluid text-center mt-4">
+    <section class="login" >
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5" style="color: #87C9B7;">    
+                <div style="font-size: 4em;"><strong>TU BANCO FIJO A LA FIJA</strong></div>
+                <img src="./../../assets/icon_bank.jpeg" alt="icon_banco" style="width: 150px;">
+            </div>
+            <div class="col-md-6">
+                <div class="card">  
+                    <div class="card-body overflow-hidden">
+                        <div class="row-m-0">
+                            <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 px-4 py-3">
+                                <h4 class="card-title mb-2">Login</h4>
+                                <p>Bienvenido, ingresa la siguiente información.</p>
+                                
+                                <form class="form-control" style="border: none;"  [formGroup]="loginTrabajadorForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group d-flex justify-content-start mb-3">
+                                        <div style="margin: 3px;"><i class="fa-solid fa-envelope" style="font-size: 25px;"></i></div>
+
+                                            <input type="text" formControlName="nombreUsuario" class="form-control"
+                                                placeholder="Nombre de Usuario">
+
+                                    </div>
+                                    <div class="alert alert-danger" [hidden]="user.valid || user.pristine">
+                                        <span>
+                                            El usuario es obligatorio
+                                        </span>
+                                    </div>    
+
+
+                                    <div class="form-group d-flex justify-content-start mb-3">
+                                        <div style="margin: 5px;"><i class="fa-solid fa-lock" style="font-size: 25px;"></i></div>
+                                        <input type="password" formControlName="claveCuenta" class="form-control"
+                                                placeholder="Contraseña">
+                                    </div>
+                                    <div class="alert alert-danger" [hidden]="password.valid || password.pristine">
+                                        <span *ngIf="password.errors?.['required']">
+                                            La contraseña es obligatoria
+                                        </span>
+    
+                                        <span *ngIf="password.errors?.['minlength']">
+                                            La contraseña debe de ser igual a 4 caracteres 
+                                        </span>
+                                    </div>
+    
+    
+                                    <button class="btn btn-primary" type="submit" [disabled]="loginTrabajadorForm.invalid">Ingresar</button>
+
+                                    
+                        
+                                    {{this.loginTrabajadorForm.value | json}}
+    
+    
+                                </form>
+                                <!--End Form-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

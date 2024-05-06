@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginFormService {
+export class LoginTrabajadorService {
 
   constructor(private http: HttpClient) { }
 
-  private urlGetUser= 'http://localhost:8000/login/validarUsuarioClave' 
+  private urlGetUser= 'http://localhost:8000/login/validarUsuarioClaveTrabajador' 
 
   public getUser(expresion: any) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
