@@ -5,8 +5,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LoginFormService } from './login-form.service';
 import { HttpClientModule } from '@angular/common/http';
 import Swal from 'sweetalert2';
-
-
+import { environment } from '../../environments/environment.development';
 
 
 @Component({
@@ -18,6 +17,7 @@ import Swal from 'sweetalert2';
   styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent {
+  private env:any = environment;
 
   constructor(private router: Router, private loginService: LoginFormService){}
 
@@ -46,7 +46,7 @@ export class LoginFormComponent {
             timer:2000,
           }).then(() =>{
             this.router.navigate(['/client'])
-
+            this.env.user= this.loginForm.value.nombreUsuario;
           });
         }
       }, (error) =>{
