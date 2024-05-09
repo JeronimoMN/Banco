@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginTrabajadorService {
+export class SharedService {
 
   constructor(private http: HttpClient) { }
 
-  private urlGetUser= 'http://localhost:8000/login/validarTrabajadorClave' 
+  private urlCreateClient = "http://localhost:8000/login/crearcliente"
 
-  public getUser(expresion: any) {
+  public createClient (expresion: any){
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(this.urlGetUser, expresion, { headers: headers, responseType: 'text' })
+    return this.http.post(this.urlCreateClient, expresion, { headers: headers, responseType: 'text' })
   }
 }

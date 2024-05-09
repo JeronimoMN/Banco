@@ -44,7 +44,7 @@ export class LoginTrabajadorComponent {
             text: 'Bienvenido',
             timer:2000,
           }).then(() =>{
-            this.router.navigate(['/client'])
+            this.router.navigate(['/trabajador'])
             this.env.user= this.loginTrabajadorForm.value.nombreUsuario;
           });
         }

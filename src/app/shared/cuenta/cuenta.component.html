@@ -1,0 +1,45 @@
+<div class="container-fluid" style="margin-top: 6%; width: fit-content;">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body overflow-hidden">
+                    <div class="row-m-0">
+                        <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 px-4 py-3">
+                            <h4 class="card-title mb-2 text-center">Transferencia</h4>
+                            <form class="form-control" style="border: none;" [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+                                <label>Selecciona la cuenta que quieres utilizar</label>
+
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Tipo de Cuenta</option>
+                                    <option value="1">Ahorro</option>
+                                    <option value="2">Credito</option>
+                                  </select>
+
+                                
+                                <div class="mb-3 form-group">
+                                    <label for="nombreCliente" class="form-label text-start">Nombre Cliente</label>
+                                    <input type="text" class="form-control" formControlName="cuentaDestino">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="apellidosCliente" class="text-start form-label">Apellidos Cliente</label>
+                                    <input type="text" class="form-control" formControlName="monto">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="montoInicial" class="text-start form-label">Monto Inicial</label>
+                                    <input type="number" class="form-control" formControlName="monto">
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-info" type="submit" [disabled]="createAccountForm.invalid">Transferir</button>
+                                </div>
+
+                                {{this.createAccountForm.value | json}}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
