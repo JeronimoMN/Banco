@@ -8,6 +8,9 @@ import { LoginTrabajadorComponent } from './login-trabajador/login-trabajador.co
 import { TrabajadorComponent } from './trabajador/trabajador.component';
 import { CuentaComponent } from './shared/cuenta/cuenta.component';
 import { ClienteComponent } from './shared/cliente/cliente.component';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { UsuariosComponent } from './shared/usuarios/usuarios.component';
+import { SeguridadComponent } from './shared/seguridad/seguridad.component';
 
 export const routes: Routes = [
     {path: 'login', component:LoginFormComponent},
@@ -19,6 +22,9 @@ export const routes: Routes = [
     {path: 'trabajador', component: TrabajadorComponent},
     {path: 'cuenta', component: CuentaComponent},
     {path: 'cliente', component: ClienteComponent},
+    {path: 'admin', component: AdministradorComponent},
+    {path: 'usuarios', component: UsuariosComponent},
+    {path: 'seguridad', component: SeguridadComponent},
 
     
     {path: '', redirectTo: '/main-page', pathMatch:'full'},

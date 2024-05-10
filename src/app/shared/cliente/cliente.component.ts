@@ -61,11 +61,15 @@ export class ClienteComponent {
      'apellidosCliente': this.createClienteForm.value.apellidosCliente, 'celularCliente': this.createClienteForm.value.celularCliente, 
      'direccionCliente': this.createClienteForm.value.direccionCliente, 'nombreUsuario': this.createClienteForm.value.nombreUsuario, 'claveCliente': this.createClienteForm.value.claveCliente}).subscribe(
       (response: any) =>{
-        if(response){
+        if(response == 'Agregado'){
           console.log(response)
           Swal.fire({
             title: 'Cliente Creado',
             text: 'Creación Exitosa',
+            icon: 'success',
+            timer:2000,
+          }).then(()=>{
+            this.router.navigate(['/trabajador'])
           })
         }
       }, (error) =>{

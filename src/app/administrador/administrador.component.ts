@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-trabajador',
+  selector: 'app-administrador',
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './trabajador.component.html',
-  styleUrl: './trabajador.component.css'
+  templateUrl: './administrador.component.html',
+  styleUrl: './administrador.component.css'
 })
-export class TrabajadorComponent {
+export class AdministradorComponent {
 
 }

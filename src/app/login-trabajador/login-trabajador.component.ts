@@ -6,6 +6,7 @@ import { LoginTrabajadorService } from './login-trabajador.service';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
 import Swal from 'sweetalert2';
+import { end } from '@popperjs/core';
 
 @Component({
   selector: 'app-login-trabajador',
@@ -38,14 +39,19 @@ export class LoginTrabajadorComponent {
   onSubmit(){
     this.loginTrabajadorService.getUser({'nombreUsuario': this.loginTrabajadorForm.value.nombreUsuario, 'claveCuenta': this.loginTrabajadorForm.value.claveCuenta}).subscribe(
       (response: any) =>{
+        console.log(response)
         if(response){
           Swal.fire({
             title: 'Cargando...',
             text: 'Bienvenido',
             timer:2000,
           }).then(() =>{
-            this.router.navigate(['/trabajador'])
-            this.env.user= this.loginTrabajadorForm.value.nombreUsuario;
+            this.env.worker = this.loginTrabajadorForm.value.nombreUsuario;
+            if (response == 'administrador'){
+              this.router.navigate(['/admin'])
+            }else{
+              this.router.navigate(['/trabajador'])
+            }
           });
         }
       }, (error) =>{

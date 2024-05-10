@@ -5,7 +5,6 @@ import { TransferFormService } from './transfer-form.service';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
 import Swal from 'sweetalert2';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 
