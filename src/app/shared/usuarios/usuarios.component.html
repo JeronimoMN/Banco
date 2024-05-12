@@ -5,8 +5,6 @@
             <h5  style="margin-top: 30px;">No hay datos para mostrar</h5>
 
             <form class="form-group">
-              <input type="search" class="form-control"  placeholder="Filter by name">
-
               <table class="table table-striped mt-5">
                 <thead>
                   <tr>
@@ -19,24 +17,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let usuario of usuarios">
+                  <tr *ngFor="let usuario of usuarios; let i = index" [attr.id]="'fila-' + i">
                     <th> {{usuario.id_usuario}} </th>
                     <td> {{usuario.nombre_completo}}</td>
                     <td> {{usuario.nombre_user}}</td>
                     <td> {{usuario.tipo_usuario}} </td>
                     <td> {{usuario.estado_usuario}} </td>
                     <td>
-                      <i class="fa-regular fa-pen-to-square fa-lg text-info mr-4"></i>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [checked]="usuario.estado_usuario === 'bloqueado'" (change)="cambiarEstadoCuenta(usuario.id_usuario, usuario.tipo_usuario, usuario.estado_usuario)">
+                      </div>                      
                     </td>
                   </tr>
                 </tbody>
             </table>
-
-
             </form>
-            
-
-            
         </div>
     </div>
 </div>
