@@ -1,1 +1,72 @@
-<p>seguridad works!</p>
+<div class="container mt-4">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <span class="h3">Listado de Transacciones</span>
+          <h5 *ngIf="logTransacciones.length == 0" style="margin-top: 30px;">No hay datos para mostrar</h5>
+          <form class="form-group" style="max-height: 250px; overflow-y: auto;">
+            <table *ngIf="logTransacciones.length" class="table table-striped mt-5">
+              <thead>
+                <tr>
+                  <th>Id Transacción</th>
+                  <th>Nombre Usuario</th>
+                  <th>Cedula</th>
+                  <th>Número Cuenta</th>
+                  <th>Tipo Transacción</th>
+                  <th>Monto</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let logTransaccion of logTransacciones; let i = index" [attr.id]="'fila-' + i">
+                  <th> {{logTransaccion.id_transaccion}} </th>
+                  <td> {{logTransaccion.nombre_usuario}}</td>
+                  <td> {{logTransaccion.cedula}}</td>
+                  <td> {{logTransaccion.numero_cuenta}} </td>
+                  <td> {{logTransaccion.tipo_transaccion}} </td>
+                  <td> {{logTransaccion.monto}} </td>
+                  <td> {{logTransaccion.fecha}} </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 mt-5">
+      <div class="card">
+        <div class="card-body">
+          <span class="h3">Listado de Accesos</span>
+          <h5 *ngIf="logTransacciones.length == 0" style="margin-top: 30px;">No hay datos para mostrar</h5>
+          <form class="form-group" style="max-height: 250px; overflow-y: auto;">
+            <table *ngIf="logTransacciones.length" class="table table-striped mt-5">
+              <thead>
+                <tr>
+                  <th>Id Acceso</th>
+                  <th>Nombre Usuario</th>
+                  <th>Cedula</th>
+                  <th>Tipo Acceso</th>
+                  <th>Fecha Acceso</th>
+                  <th>Tipo Usuario</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let logAcceso of logAccesos.slice(0, 5); let i = index" [attr.id]="'fila-' + i">
+                  <th> {{logAcceso.id_acceso}} </th>
+                  <td> {{logAcceso.nombre_usuario}}</td>
+                  <td> {{logAcceso.cedula_titular}}</td>
+                  <td> {{logAcceso.tipo_acceso}} </td>
+                  <td> {{logAcceso.fecha_acceso}} </td>
+                  <td> {{logAcceso.tipo_usuario}} </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
