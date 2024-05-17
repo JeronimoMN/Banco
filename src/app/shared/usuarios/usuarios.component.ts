@@ -3,7 +3,6 @@ import { SharedService } from '../shared.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { concatMap, filter, map } from 'rxjs';
 

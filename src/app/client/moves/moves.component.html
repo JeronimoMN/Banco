@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Movimientos</span>
+            <form class="form-group" style="border: none;" [formGroup]="accountForm">
+                <select class="form-select mb-4 form-group" aria-label="Default select example" formControlName="cuenta">
+                    <option *ngFor="let item of cuentas; index as i"> {{item.cuenta}}
+                    </option>
+                </select>
+            </form>
+            <table class="table table-striped mt-5">
+                <tbody>
+                  <tr *ngFor="let movimiento of movimientos; let i = index" [attr.id]="'fila-' + i">
+                    <th> {{movimiento.monto}} </th>
+                    <td> {{movimiento.fecha}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
