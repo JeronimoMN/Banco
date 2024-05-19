@@ -18,6 +18,8 @@ export class ClientService {
 
   private urlGetMovimientos = 'http://localhost:8000/login/getusermoves'
 
+  private urlDynamicGetkey= 'http://localhost:8000/login/getdinamicpass'
+
 
   public getTypeAccount(expresion: any){
     return this.http.post(this.urlGetTypeAccount, expresion)
@@ -34,5 +36,9 @@ export class ClientService {
 
   public getMoves(expresion:any) {
     return this.http.post<any>(this.urlGetMovimientos, expresion)
+  }
+
+  public getDynamicKey(expresion: any){
+    return this.http.post<any>(this.urlDynamicGetkey, expresion)
   }
 }

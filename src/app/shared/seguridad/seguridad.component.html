@@ -40,9 +40,9 @@
       <div class="card">
         <div class="card-body">
           <span class="h3">Listado de Accesos</span>
-          <h5 *ngIf="logTransacciones.length == 0" style="margin-top: 30px;">No hay datos para mostrar</h5>
+          <h5 *ngIf="logAccesos.length == 0" style="margin-top: 30px;">No hay datos para mostrar</h5>
           <form class="form-group" style="max-height: 250px; overflow-y: auto;">
-            <table *ngIf="logTransacciones.length" class="table table-striped mt-5">
+            <table *ngIf="logAccesos.length" class="table table-striped mt-5">
               <thead>
                 <tr>
                   <th>Id Acceso</th>

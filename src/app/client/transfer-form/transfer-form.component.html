@@ -6,9 +6,11 @@
                     <div class="row-m-0">
                         <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 px-4 py-3">
                             <h4 class="card-title mb-2 text-center">Transferencia</h4>
-                            <form class="form-control" style="border: none;" [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+                            <form class="form-control" style="border: none;" [formGroup]="transferForm"
+                                (ngSubmit)="onSubmit()">
                                 <label>Selecciona la cuenta que quieres utilizar</label>
-                                <select class="form-select mb-4 form-group" aria-label="Default select example" formControlName="cuenta">
+                                <select class="form-select mb-4 form-group" aria-label="Default select example"
+                                    formControlName="cuenta">
                                     <option *ngFor="let item of data; index as i"> {{item.cuenta}} - {{item.tipo}}
                                     </option>
                                 </select>
@@ -21,13 +23,10 @@
                                     <label for="monto" class="text-start form-label">Monto</label>
                                     <input type="number" class="form-control" formControlName="monto">
                                 </div>
-
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-info" type="submit" [disabled]="transferForm.invalid">Transferir</button>
+                                    <button class="btn btn-info" type="submit"
+                                        [disabled]="transferForm.invalid">Transferir</button>
                                 </div>
-
-                                {{this.transferForm.value | json}}
-
                             </form>
                         </div>
                     </div>

@@ -12,23 +12,18 @@
                             <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 px-4 py-3">
                                 <h4 class="card-title mb-2">Login</h4>
                                 <p>Bienvenido, ingresa la siguiente información.</p>
-                                
-                                
                                 <form class="form-control" style="border: none;"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                                     <div class="form-group d-flex justify-content-start mb-3">
                                         <div style="margin: 3px;"><i class="fa-solid fa-envelope" style="font-size: 25px;"></i></div>
 
                                             <input type="text" formControlName="nombreUsuario" class="form-control"
                                                 placeholder="Nombre de Usuario">
-
                                     </div>
                                     <div class="alert alert-danger" [hidden]="user.valid || user.pristine">
                                         <span>
                                             El usuario es obligatorio
                                         </span>
                                     </div>    
-
-
                                     <div class="form-group d-flex justify-content-start mb-3">
                                         <div style="margin: 5px;"><i class="fa-solid fa-lock" style="font-size: 25px;"></i></div>
                                         <input type="password" formControlName="claveCuenta" class="form-control"
@@ -38,22 +33,12 @@
                                         <span *ngIf="password.errors?.['required']">
                                             La contraseña es obligatoria
                                         </span>
-    
                                         <span *ngIf="password.errors?.['minlength']">
                                             La contraseña debe de ser igual a 4 caracteres 
                                         </span>
                                     </div>
-    
-    
                                     <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Ingresar</button>
-
-                                    
-                        
-                                    {{this.loginForm.value | json}}
-    
-    
                                 </form>
-                                <!--End Form-->
                             </div>
                         </div>
                     </div>
