@@ -11,6 +11,7 @@ import { ClienteComponent } from './shared/cliente/cliente.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { UsuariosComponent } from './shared/usuarios/usuarios.component';
 import { SeguridadComponent } from './shared/seguridad/seguridad.component';
+import { MovesComponent } from './client/moves/moves.component';
 
 export const routes: Routes = [
     {path: 'login', component:LoginFormComponent},
@@ -25,6 +26,7 @@ export const routes: Routes = [
     {path: 'admin', component: AdministradorComponent},
     {path: 'usuarios', component: UsuariosComponent},
     {path: 'seguridad', component: SeguridadComponent},
+    {path: 'movimientos', component: MovesComponent},
 
     
     {path: '', redirectTo: '/main-page', pathMatch:'full'},

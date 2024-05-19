@@ -33,6 +33,6 @@ export class ClientService {
   }
 
   public getMoves(expresion:any) {
-    return this.http.post(this.urlGetMovimientos, expresion)
+    return this.http.post<any>(this.urlGetMovimientos, expresion)
   }
 }

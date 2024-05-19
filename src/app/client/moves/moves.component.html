@@ -1,19 +1,39 @@
-<div class="container mt-4">
+<div class="container mt-4 text-center">
     <div class="card">
         <div class="card-body">
             <span class="h3">Movimientos</span>
-            <form class="form-group" style="border: none;" [formGroup]="accountForm">
-                <select class="form-select mb-4 form-group" aria-label="Default select example" formControlName="cuenta">
+            <form class="form" style="border: none;" [formGroup]="accountForm" (ngSubmit)="getMovimientos()">
+                <label for="" class="mt-3">Seleccione la cuenta</label>
+                <select class="form-select mt-2 mb-4 form-group" aria-label="Default select example"
+                    formControlName="cuenta">
+                    <option value="Default">Select</option>
                     <option *ngFor="let item of cuentas; index as i"> {{item.cuenta}}
                     </option>
                 </select>
+                <div class="d-flex">
+                    <input class="form-control" style="margin-right: 10px;" placeholder="yyyy-mm-dd" type="date"
+                        name="dp" formControlName="fechaInicio" ngbDatepicker #d="ngbDatepicker">
+                    <input class="form-control" placeholder="yyyy-mm-dd" type="date" name="dp"
+                        formControlName="fechaFinal" ngbDatepicker #f="ngbDatepicker">
+                </div>
+                <div class="d-flex justify-content-center align-self-center">
+                    <button class="btn btn-outline-secondary mt-4 " style="width: 20%;" type="submit">Consultar</button>
+                </div>
             </form>
             <table class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th>Monto</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
                 <tbody>
-                  <tr *ngFor="let movimiento of movimientos; let i = index" [attr.id]="'fila-' + i">
-                    <th> {{movimiento.monto}} </th>
-                    <td> {{movimiento.fecha}}</td>
-                  </tr>
+                    <tr *ngFor="let mov of movimientos; let i = index" [attr.id]="'fila-' + i">
+                        <th> {{mov.monto}} </th>
+                        <td> {{mov.fecha}} </td>
+                        <td> {{mov.hora}} </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
