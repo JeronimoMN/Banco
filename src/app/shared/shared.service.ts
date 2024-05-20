@@ -1,19 +1,22 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
+  private env:any = environment;
 
   constructor(private http: HttpClient) { }
 
-  private urlCreateClient = "http://localhost:8000/login/crearcliente"
-  private urlCreateAccount = "http://localhost:8000/login/crearcuenta"
-  private ultGetAllUsers = "http://localhost:8000/login/getuserbanck"
-  private ulrChangeStateAccount = "http://localhost:8000/login/cambiarestado"
-  private urlGetAllLogTrassacciones= "http://localhost:8000/login/getlogstrans"
-  private urlGetAllAccess = "http://localhost:8000/login/getlogsaccess"
+
+  private urlCreateClient = "https://apirest-banco-production.up.railway.app/login/crearcliente"
+  private urlCreateAccount = "https://apirest-banco-production.up.railway.app/login/crearcuenta"
+  private ultGetAllUsers = "https://apirest-banco-production.up.railway.app/login/getuserbanck"
+  private ulrChangeStateAccount = "https://apirest-banco-production.up.railway.app/login/cambiarestado"
+  private urlGetAllLogTrassacciones= "https://apirest-banco-production.up.railway.app/login/getlogstrans"
+  private urlGetAllAccess = "https://apirest-banco-production.up.railway.app/login/getlogsaccess"
 
   public createClient (expresion: any){
     const headers = new HttpHeaders().set('Content-Type', 'application/json');

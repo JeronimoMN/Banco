@@ -37,6 +37,7 @@ export class LoginFormComponent {
 
 
   onSubmit(){
+    console.log(this.env.link)
     this.loginService.getUser({'nombreUsuario': this.loginForm.value.nombreUsuario, 'claveCuenta': this.loginForm.value.claveCuenta}).subscribe(
       (response: any) =>{
         if(response){

@@ -51,17 +51,17 @@ export class UsuariosComponent {
         this.sharedService.changeStateAccount({cedula: idUser, tipo_usuario: tipoUser, estado: 'bloqueado'}).subscribe(
           (response :any) => {
           console.log(response)
+          this.getUsers()
         }
       )
     }if(estadoUser == 'bloqueado'){
       this.sharedService.changeStateAccount({cedula: idUser, tipo_usuario: tipoUser, estado: 'activo'}).subscribe(
         (response :any) => {
           console.log(response)
+          this.getUsers()
         }
       )
     }
-
-    this.getUsers()
   }
 
 

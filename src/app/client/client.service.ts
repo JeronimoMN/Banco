@@ -1,24 +1,27 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
+  private env:any = environment;
+
 
 
   constructor(private http: HttpClient){}
 
 
-  private urlGetAccount = 'http://localhost:8000/login/useraccount'
+  private urlGetAccount = "https://apirest-banco-production.up.railway.app/login/useraccount"
 
-  private urlGetTypeAccount = 'http://localhost:8000/login/useraccountype'
+  private urlGetTypeAccount = "https://apirest-banco-production.up.railway.app/login/useraccountype"
 
-  private urltGetTransaccion = 'http://localhost:8000/login/transferirmonto'
+  private urltGetTransaccion = "https://apirest-banco-production.up.railway.app/login/transferirmonto"
 
-  private urlGetMovimientos = 'http://localhost:8000/login/getusermoves'
+  private urlGetMovimientos = "https://apirest-banco-production.up.railway.app/login/getusermoves"
 
-  private urlDynamicGetkey= 'http://localhost:8000/login/getdinamicpass'
+  private urlDynamicGetkey= "https://apirest-banco-production.up.railway.app/login/getdinamicpass"
 
 
   public getTypeAccount(expresion: any){
