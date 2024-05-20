@@ -6,31 +6,27 @@
                     <div class="row-m-0">
                         <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 px-4 py-3">
                             <h4 class="card-title mb-2 text-center">Transferencia</h4>
-                            <form class="form-control" style="border: none;" [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+                            <form class="form-control" style="border: none;" [formGroup]="createAccountForm"
+                                (ngSubmit)="onSubmit()">
                                 <label>Selecciona la cuenta que quieres utilizar</label>
-
                                 <div class="mb-3 form-group">
                                     <label for="cedulaCliente" class="form-label text-start">Cédula Cliente</label>
                                     <input type="text" class="form-control" formControlName="cedulaCliente">
                                 </div>
-
-                                <select class="form-select" aria-label="Default select example" formControlName="tipoCuenta">
+                                <select class="form-select" aria-label="Default select example"
+                                    formControlName="tipoCuenta">
                                     <option selected>Tipo de Cuenta</option>
                                     <option value="ahorros">Ahorro</option>
                                     <option value="corriente">Corriente</option>
-                                  </select>
-
+                                </select>
                                 <div class="mb-3 form-group">
                                     <label for="montoInicial" class="text-start form-label">Monto Inicial</label>
                                     <input type="number" class="form-control" formControlName="montoInicial">
                                 </div>
-
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-info" type="submit" [disabled]="createAccountForm.invalid" style="color: white;">Crear cuenta</button>
+                                    <button class="btn btn-info" type="submit" [disabled]="createAccountForm.invalid"
+                                        style="color: white;">Crear cuenta</button>
                                 </div>
-
-                                {{this.createAccountForm.value | json}}
-
                             </form>
                         </div>
                     </div>

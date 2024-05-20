@@ -6,56 +6,45 @@
                     <div class="row-m-0">
                         <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 px-4 py-3">
                             <h4 class="card-title mb-2 text-center">Crear Cliente</h4>
-                            <form class="form-control" style="border: none;" [formGroup]="createClienteForm" (ngSubmit)="onSubmit()">
-
+                            <form class="form-control" style="border: none;" [formGroup]="createClienteForm"
+                                (ngSubmit)="onSubmit()">
                                 <strong class="mb-3">Datos Personales</strong>
-
                                 <div class="row mt-3">
                                     <div class="col-12 mb-3 form-group">
                                         <label for="cedulaCliente" class="form-label text-start">Cedula</label>
                                         <input formControlName="cedulaCliente" type="text" class="form-control">
                                     </div>
-                                
                                     <div class="col-6 mb-3 form-group">
                                         <label for="nombreCliente" class="form-label text-start">Nombre Cliente</label>
                                         <input formControlName="nombresCliente" type="text" class="form-control">
                                     </div>
                                     <div class="col-6 mb-3 form-group">
-                                        <label for="apellidoCliente" class="text-start form-label">Apellidos Cliente</label>
+                                        <label for="apellidoCliente" class="text-start form-label">Apellidos
+                                            Cliente</label>
                                         <input formControlName="apellidosCliente" type="text" class="form-control">
                                     </div>
-                                
                                     <div class="col-6 mb-3 form-group">
                                         <label for="celularCliente" class="text-start form-label">Celular</label>
                                         <input formControlName="celularCliente" type="text" class="form-control">
                                     </div>
-
                                     <div class="col-6 mb-3 form-group">
                                         <label for="direccionCliente" class="text-start form-label">Dirección</label>
                                         <input formControlName="direccionCliente" type="text" class="form-control">
                                     </div>
-
-
                                     <strong class="mb-3 mt-3">Información relacionada a la CUENTA</strong>
-
                                     <div class="col-6 mb-3 form-group">
                                         <label for="nombreUsuario" class="text-start form-label">Nombre Usuario</label>
                                         <input formControlName="nombreUsuario" type="text" class="form-control">
                                     </div>
-
                                     <div class="col-6 mb-3 form-group">
                                         <label for="claveCuenta" class="text-start form-label">Clave Cuenta</label>
                                         <input formControlName="claveCliente" type="text" class="form-control">
                                     </div>
-
                                 </div>
-
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-info" type="submit" [disabled]="createClienteForm.invalid">Crear Cliente</button>
+                                    <button class="btn btn-info" type="submit"
+                                        [disabled]="createClienteForm.invalid">Crear Cliente</button>
                                 </div>
-
-                                {{this.createClienteForm.value | json}}
-
                             </form>
                         </div>
                     </div>
